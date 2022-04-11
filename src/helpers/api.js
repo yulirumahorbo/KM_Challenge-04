@@ -1,0 +1,2 @@
+export const Base_Url = 'http://code.aldipee.com/';
+export const Token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2MjRiZTMyN2JiZTlkZDdmYjRmODVlNDMiLCJpYXQiOjE2NDk2NDkwNDUsImV4cCI6MTY0OTY1MDg0NSwidHlwZSI6ImFjY2VzcyJ9.rYp3R_AqBsFdjYHZ9AoUTE0kI2SvpV19703C3mtjx20';
