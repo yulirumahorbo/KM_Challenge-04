@@ -1,13 +1,21 @@
-import {createStore, applyMiddleware} from 'redux';
+import { createStore, applyMiddleware, combineReducers } from 'redux';
 import logger from 'redux-logger';
 import thunk from 'redux-thunk';
-import { allReducer } from './allReducer';
-import AsyncStorage from '@react-native-async-storage/async-storage';
-import {persistStore, persistReducer} from 'redux-persist';
+import { persistStore, persistReducer } from 'redux-persist';
+import storage from 'redux-persist/lib/storage';
+import Global from '../reduxGlobal/reducer';
+import HomeReducer from '../screens/Home/redux/reducer';
+import LoginReducer from '../screens/Login/redux/reducer';
+
+const allReducer = combineReducers({
+  login: LoginReducer,
+  home: HomeReducer,
+  global: Global,
+});
 
 const config = {
   key: 'abcdefghijklmn',
-  storage: AsyncStorage,
+  storage,
   timeout: null,
   whitelist: ['Login'],
 };

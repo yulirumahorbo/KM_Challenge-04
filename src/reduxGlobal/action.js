@@ -1,13 +1,9 @@
-export const setLoading = status => {
-    return {
-      type: 'SET_LOADING',
-      status,
-    };
-  };
+export const setLoading = (status) => ({
+  type: 'SET_LOADING',
+  status,
+});
 
-  export const setRefresh = status => {
-    return {
-      type: 'SET_REFRESH',
-      status,
-    };
-  };
+export const setRefresh = (status) => ({
+  type: 'SET_REFRESH',
+  status,
+});

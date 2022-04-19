@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "317184960697",
+    "project_id": "bookapp-push-notif",
+    "storage_bucket": "bookapp-push-notif.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:317184960697:android:1819387cbe7b5533c11368",
+        "android_client_info": {
+          "package_name": "com.bookapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "317184960697-oovrjv88i8v4jnhsq5ooa3cuvdhfh25t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyATA31vZds3X8xDSuCxcMEuJfuHOz5bQvo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "317184960697-oovrjv88i8v4jnhsq5ooa3cuvdhfh25t.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

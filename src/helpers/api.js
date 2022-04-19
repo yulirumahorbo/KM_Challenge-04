@@ -1,2 +1,2 @@
-export const Base_Url = 'http://code.aldipee.com/';
-export const Token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2MjRiZTMyN2JiZTlkZDdmYjRmODVlNDMiLCJpYXQiOjE2NDk2NDkwNDUsImV4cCI6MTY0OTY1MDg0NSwidHlwZSI6ImFjY2VzcyJ9.rYp3R_AqBsFdjYHZ9AoUTE0kI2SvpV19703C3mtjx20';
+export const BaseUrl = 'http://code.aldipee.com/';
+export const Token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2MjRiZTMyN2JiZTlkZDdmYjRmODVlNDMiLCJpYXQiOjE2NTAyNjkwNjEsImV4cCI6MTY1MDI3MDg2MSwidHlwZSI6ImFjY2VzcyJ9.ha20gm6JDXQ93X6PQTBQEjLHZ3V0zymIi0fkAQ7dVQA';
