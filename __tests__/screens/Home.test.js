@@ -18,7 +18,7 @@ describe('Snapshot', () => {
 
 describe('Validation Data Type', () => {
   test('BooksData', () => {
-    expect(typeof booksData).toBe('string');
+    expect(typeof booksData).toBe('object');
   });
 
   test('Token', () => {
