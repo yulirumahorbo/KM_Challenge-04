@@ -1,6 +1,6 @@
 {
   "name": "bookapp",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "private": true,
   "scripts": {
     "android": "react-native run-android",
@@ -24,6 +24,7 @@
     "@react-navigation/native": "^6.0.10",
     "@react-navigation/stack": "^6.2.1",
     "axios": "^0.26.1",
+    "axios-mock-adapter": "^1.20.0",
     "np": "^7.6.1",
     "react": "17.0.2",
     "react-devtools-core": "^4.24.3",

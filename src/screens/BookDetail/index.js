@@ -10,7 +10,7 @@ import iconBack from '../../assets/image/icon-back.png';
 import iconLike from '../../assets/image/love.png';
 import iconShare from '../../assets/image/share.png';
 import star from '../../assets/image/star.png';
-// import PushNotification from "react-native-push-notification";
+
 const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: '#ccaf9b' },
   list: {
@@ -40,14 +40,6 @@ const styles = StyleSheet.create({
 
 export default function BookDetail({ navigation }) {
   const { bookDataDetail } = useSelector((state) => state.home);
-
-  // const handleNotification = (bookDataDetail) => {
-  //   PushNotification.localNotification({
-  //     channelId: "test-channel",
-  //     title: "Kamu menyukai" + bookDataDetail.title,
-  //     message: bookDataDetail.author,
-  //   })
-  // }
 
   return (
     <SafeAreaView style={styles.container}>

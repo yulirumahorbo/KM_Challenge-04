@@ -1,12 +1,11 @@
 import {
   Alert, StyleSheet, Text, View, SafeAreaView, Image,
 } from 'react-native';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { moderateScale } from 'react-native-size-matters';
 import { TextInput, TouchableOpacity } from 'react-native-gesture-handler';
 import axios from 'axios';
-import AsyncStorage from '@react-native-async-storage/async-storage';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { BaseUrl } from '../../helpers/api';
 import { setToken } from './redux/action';
 import loginImage from '../../assets/image/Login_Image.png';
@@ -58,20 +57,6 @@ const styles = StyleSheet.create({
 function Login({ navigation }) {
   const dispatch = useDispatch();
   const [dataLogin, setDataLogin] = useState({});
-  const { dataToken } = useSelector((state) => state.login);
-
-  const isLogin = async () => {
-    const savedToken = await AsyncStorage.getItem('token');
-    dispatch(setToken(savedToken));
-    if (dataToken) {
-      navigation.navigate('Home');
-    }
-  };
-
-  useEffect(() => {
-    isLogin();
-    // createChannel();
-  }, []);
 
   const handleInput = (key, value) => {
     setDataLogin((prevState) => ({
@@ -80,21 +65,13 @@ function Login({ navigation }) {
     }));
   };
 
-  // const createChannel = () => {
-  //   PushNotification.createChannel({
-  //     channelId: "test-channel",
-  //     channelName: "Test Channel"
-  //   })
-  // }
-
   const doLogin = async () => {
     try {
       const results = await axios.post(
         `${BaseUrl}api/v1/auth/login`,
         dataLogin,
       );
-      AsyncStorage.setItem('token', results.data.tokens.access.token);
-
+      dispatch(setToken(results.data.tokens.access.token));
       if (results.status === 201 || results.status === 200) {
         navigation.navigate('Home');
       }

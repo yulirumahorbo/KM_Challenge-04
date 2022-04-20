@@ -1,8 +1,11 @@
 import axios from 'axios';
 import { Alert } from 'react-native';
-import { BaseUrl, Token } from '../../../helpers/api';
+import { BaseUrl } from '../../../helpers/api';
 import { navigate } from '../../../helpers/navigate';
 import { setLoading, setRefresh } from '../../../reduxGlobal/action';
+import { store } from '../../../store';
+
+const Token = store.getState().login.tokenData;
 
 axios.defaults.headers.Authorization = `Bearer ${Token}`;
 export const setBook = (dataBook) => ({
