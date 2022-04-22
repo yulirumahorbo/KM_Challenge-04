@@ -1,4 +1,4 @@
-name: CI Prosses
+name: CI
 
 on:
   workflow_dispatch: 
