@@ -114,7 +114,7 @@ function Login({ navigation }) {
           secureTextEntry
         />
         <View style={{ alignItems: 'center' }}>
-          <TouchableOpacity style={styles.buttonContainer} onPress={doLogin}>
+          <TouchableOpacity testID="LoginButton" style={styles.buttonContainer} onPress={doLogin}>
             <Text
               style={[
                 styles.regularText,

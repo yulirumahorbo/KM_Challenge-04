@@ -11,35 +11,34 @@ import iconLike from '../../assets/image/love.png';
 import iconShare from '../../assets/image/share.png';
 import star from '../../assets/image/star.png';
 
-const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: '#ccaf9b' },
-  list: {
-    backgroundColor: '#fcfafa',
-    marginTop: moderateScale(30),
-    marginHorizontal: moderateScale(16),
-    height: moderateScale(198),
-    padding: moderateScale(8),
-    borderWidth: moderateScale(2),
-    borderRadius: moderateScale(8),
-  },
-  bottonBack: {
-    top: moderateScale(16),
-    left: moderateScale(16),
-  },
-  regularText: {
-    fontWeight: '500',
-    fontSize: moderateScale(18),
-    color: '#000000',
-  },
-  regularSubText: {
-    fontWeight: '400',
-    fontSize: moderateScale(16),
-    color: '#000000',
-  },
-});
-
 export default function BookDetail({ navigation }) {
   const { bookDataDetail } = useSelector((state) => state.home);
+  const styles = StyleSheet.create({
+    container: { flex: 1, backgroundColor: '#ccaf9b' },
+    list: {
+      backgroundColor: '#fcfafa',
+      marginTop: moderateScale(30),
+      marginHorizontal: moderateScale(16),
+      height: moderateScale(198),
+      padding: moderateScale(8),
+      borderWidth: moderateScale(2),
+      borderRadius: moderateScale(8),
+    },
+    bottonBack: {
+      top: moderateScale(16),
+      left: moderateScale(16),
+    },
+    regularText: {
+      fontWeight: '500',
+      fontSize: moderateScale(18),
+      color: '#000000',
+    },
+    regularSubText: {
+      fontWeight: '400',
+      fontSize: moderateScale(16),
+      color: '#000000',
+    },
+  });
 
   return (
     <SafeAreaView style={styles.container}>
@@ -190,14 +189,30 @@ export default function BookDetail({ navigation }) {
           </TouchableOpacity>
         </View>
       </View>
-      <Text
-        style={[
-          styles.regularText,
-          { marginLeft: moderateScale(16), marginTop: moderateScale(16) },
-        ]}
-      >
-        Overview
-      </Text>
+      <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+        <Text
+          style={[
+            styles.regularText,
+            { marginHorizontal: moderateScale(16), marginTop: moderateScale(16) },
+          ]}
+        >
+          Overview
+        </Text>
+        <TouchableOpacity
+          style={{
+            marginTop: moderateScale(16),
+            backgroundColor: '#873c1e',
+            borderWidth: moderateScale(2),
+            borderRadius: moderateScale(6),
+            paddingVertical: moderateScale(5),
+            paddingHorizontal: moderateScale(5),
+          }}
+          onPress={() => navigation.navigate('Pdf Screen')}
+        >
+          <Text style={[styles.regularSubText, { color: '#FFFFFF' }]}>PDF</Text>
+        </TouchableOpacity>
+      </View>
+
       <ScrollView
         style={[styles.list, { flex: 1, marginTop: moderateScale(16) }]}
       >

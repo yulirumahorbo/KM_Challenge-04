@@ -26,11 +26,14 @@ const styles = StyleSheet.create({
   },
 });
 
-export default function Home() {
+export default function Home({ navigation }) {
   const dispatch = useDispatch();
   const { bookData, bookDataLimit } = useSelector((state) => state.home);
   const { loading, refresh } = useSelector((state) => state.global);
 
+  const onPress = () => {
+    navigation.navigate('Login');
+  };
   const getBooks = () => {
     dispatch(getBook());
   };
@@ -98,7 +101,20 @@ export default function Home() {
     <View
       style={{ flex: 1, backgroundColor: 'white', padding: moderateScale(16) }}
     >
-      <Text style={styles.regularSubText}>Good Morning, Veric!</Text>
+      <View
+        style={{
+          flexDirection: 'row',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+        }}
+      >
+        <Text style={styles.regularSubText}>Good Morning, Veric!</Text>
+        <TouchableOpacity onPress={onPress}>
+          <Text style={[styles.regularSubText, { color: '#3b3b11' }]}>
+            Logout
+          </Text>
+        </TouchableOpacity>
+      </View>
       <View>
         <Text style={styles.regularText}>Recommended</Text>
         <FlatList

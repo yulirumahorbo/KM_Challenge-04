@@ -7,8 +7,6 @@ import { store } from '../../src/store';
 const Token = store.getState().login.tokenData;
 const booksData = store.getState().home.bookData;
 
-jest.useFakeTimers('legacy');
-
 describe('Snapshot', () => {
   test('Home Snapshot', async () => {
     const component = create(ContainerTesting(<Home />));

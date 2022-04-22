@@ -5,6 +5,7 @@ import Register from '../screens/Register';
 import SuccesRegister from '../screens/SuccesRegister';
 import Home from '../screens/Home';
 import BookDetail from '../screens/BookDetail';
+import PdfScreen from '../screens/PdfScreen';
 
 const Stack = createStackNavigator();
 
@@ -19,6 +20,7 @@ export default function MainRoutes() {
       <Stack.Screen name="Succes Register" component={SuccesRegister} />
       <Stack.Screen name="Home" component={Home} />
       <Stack.Screen name="Book Detail" component={BookDetail} />
+      <Stack.Screen name="Pdf Screen" component={PdfScreen} />
     </Stack.Navigator>
   );
 }

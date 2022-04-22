@@ -5,7 +5,6 @@ import React, { useState } from 'react';
 import { moderateScale } from 'react-native-size-matters';
 import { TextInput, TouchableOpacity } from 'react-native-gesture-handler';
 import axios from 'axios';
-import AsyncStorage from '@react-native-async-storage/async-storage';
 import { BaseUrl } from '../../helpers/api';
 import registerImage from '../../assets/image/Register_Image.png';
 
@@ -35,7 +34,7 @@ const styles = StyleSheet.create({
   },
   buttonContainer: {
     backgroundColor: '#873c1e',
-    paddingHorizontal: moderateScale(135),
+    paddingHorizontal: moderateScale(126),
     paddingVertical: moderateScale(10),
     marginHorizontal: moderateScale(16),
     borderRadius: moderateScale(30),
@@ -79,7 +78,6 @@ function Register({ navigation }) {
               `${BaseUrl}api/v1/auth/register`,
               body,
             );
-            AsyncStorage.setItem('token', results.data.token);
             if (results.status === 201 || results.status === 200) {
               navigation.navigate('Succes Register');
             }

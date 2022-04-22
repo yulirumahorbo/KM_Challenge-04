@@ -3,10 +3,17 @@ import { create } from 'react-test-renderer';
 import ContainerTesting from '../../src/helpers/reduxTesting';
 import Login from '../../src/screens/Login';
 
-jest.useFakeTimers();
-describe('Snapshot', () => {
-  test('Login Snapshot', async () => {
-    const component = create(ContainerTesting(<Login />));
-    expect(component).toMatchSnapshot();
-  });
+// const navigation = {
+//   navigate: jest.fn()
+// }
+const component = create(ContainerTesting(<Login />));
+
+test('Login Snapshot', async () => {
+  expect(component).toMatchSnapshot();
 });
+
+// test('Navigate to Home Screen', () => {
+//   const button = component.root.findByProps({testID: 'LoginButton'}).props;
+//   button.onPress();
+//   expect(navigation.navigate).toBeCalledWith('Home');
+// })
