@@ -1,7 +1,7 @@
 name: CD
 
 on:
-  workflow_dispatch: # allow jobs manual run
+  workflow_dispatch:
   release:
     types: [published]
 
@@ -22,5 +22,14 @@ jobs:
       - name: generate apk
         run: |
           cd android
-          ./gradlew assembleRelase
+          gradlew assembleRelase
           cd ..
+
+      - name: send file as messages
+        run: |
+          cd android/app/build/outputs/apk/release/
+          curl -X POST -H 'Content-Type: multipart/form-data' -F "chat_id=${{secrets.TG_CHAT_ID}}" -F document=@app-release.apk ${{secrets.TG_BOT_TOKEN}}/sendDocument
+
+      
+          
+      
